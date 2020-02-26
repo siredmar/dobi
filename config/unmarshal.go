@@ -85,9 +85,6 @@ func (c *Config) loadMeta(value map[string]interface{}) error {
 		if err != nil {
 			return fmt.Errorf("error including %q: %s", include, err)
 		}
-		if !config.Meta.IsZero() {
-			return fmt.Errorf("include %q can not define meta config", include)
-		}
 		for name, resource := range config.Resources {
 			if err := c.add(name, resource); err != nil {
 				return fmt.Errorf("error including %q: %s", include, err)

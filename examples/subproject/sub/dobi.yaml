@@ -1,0 +1,16 @@
+meta:
+  project: sub_project
+
+image=sub_runtime:
+  image: bash
+  tags: [latest]
+  pull: always
+  annotations:
+    description: "sub image"
+
+job=sub_run:
+  use: sub_runtime
+  interactive: true
+  command: echo "This is the sub project"
+  annotations:
+    description: "sub run"

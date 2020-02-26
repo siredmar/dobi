@@ -1,0 +1,18 @@
+meta:
+  project: main_project
+  include:
+    - sub/dobi.yaml
+
+image=runtime:
+  image: bash
+  tags: [latest]
+  pull: always
+  annotations:
+    description: "image"
+
+job=run:
+  use: runtime
+  interactive: true
+  command: echo "This is the main project"
+  annotations:
+    description: "run"
